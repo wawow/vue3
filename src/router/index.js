@@ -1,12 +1,25 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import Home from '@/pages/Home/index.vue'
+const Demand = () => import(/* webpackChunkName: "demand" */ '@/pages/demand/index.vue')
+const OrderList = () => import(/* webpackChunkName: "orderList" */ '@/pages/orderList/index.vue')
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home
+        name: 'Demand',
+        component: Demand,
+        meta: {
+            title: 'Demand',
+            keepAlive: false
+        }
+    },{
+        path: '/orderList',
+        name: 'OrderList',
+        component: OrderList,
+        meta: {
+            title: 'OrderList',
+            keepAlive: false
+        }
     }
 ]
 
